@@ -1,7 +1,6 @@
 import { Router } from 'express';
 import {
   createAuthMiddleware,
-  AuthError,
   AuthEventBus,
   AuthTools,
   createToolsRouter,
@@ -64,32 +63,7 @@ router.use(
     linkedAccountsStore,
     googleStrategy,
     uploadDir,
-    onRegister: async (data: any, config: any, options: any) => {
-      // Validation
-      if (!data.email || !data.password) {
-        throw new AuthError('Email and password are required', 'MISSING_FIELDS', 400);
-      }
-
-      // Check if user already exists
-      const existing = await userStore.findByEmail(data.email);
-      if (existing) {
-        throw new AuthError('Email already registered', 'EMAIL_EXISTS', 409);
-      }
-
-      // Hash the password before saving
-      const passwordService = authConfigurator.passwordService;
-      const hashed = await passwordService.hash(data.password, authConfig.bcryptSaltRounds || 10);
-
-      // Create the user in the database
-      const user = await userStore.create({
-        ...data,
-        password: hashed,
-        loginProvider: 'local',
-      });
-
-      console.log(`[AUTH] New user registered: ${user.email} (ID: ${user.id})`);
-      return user;
-    },
+    eventBus: bus,
   }),
 );
 
