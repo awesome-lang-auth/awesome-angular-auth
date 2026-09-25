@@ -19,3 +19,6 @@ Releases up to 1.9.0 were published as `ng-awesome-node-auth` and have no entrie
   ```
 - The version follows the Node library (1.10.x).
 - The repository moved to [awesome-lang-auth/awesome-angular-auth](https://github.com/awesome-lang-auth/awesome-angular-auth). The workspace project is now `projects/awesome-angular-auth` and builds to `dist/awesome-angular-auth`.
+
+### Fixed
+- `AuthService.setup2fa()` now passes `otpauthUrl` through to the caller, next to `secret` and `qrCode` ([#7](https://github.com/awesome-lang-auth/awesome-angular-auth/issues/7)). Against a backend that sends `otpauthUrl` without `qrCode`, the app can now draw the QR itself. The request is unchanged.
