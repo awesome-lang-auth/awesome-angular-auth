@@ -5,7 +5,7 @@ import { AuthService } from '@awesome-lang-auth/angular';
 import { Subscription } from 'rxjs';
 
 const NG_LIB_VERSION = '1.10.0';
-const NODE_LIB_VERSION = '1.8.4';
+const NODE_LIB_VERSION = '1.10.0';
 
 /**
  * Root wrapper page for the `@awesome-lang-auth/angular` demo.
