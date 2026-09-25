@@ -53,17 +53,17 @@ Mount the authentication router and the Admin Panel.
 
 ```typescript
 import { Router } from 'express';
+import { AuthEventBus } from 'awesome-node-auth';
 import { authConfigurator, settingsStore, uploadDir } from './auth.config';
 
 const router = Router();
+const bus = new AuthEventBus();
 
 router.use('/', authConfigurator.router({
   settingsStore,
   uploadDir,
-  onRegister: async (data) => {
-    // Custom registration logic (e.g., password hashing)
-    return userStore.create(data);
-  }
+  eventBus: bus,          // router events (login, register, 2FA, ...) are published on it
+  defaultRegister: true,  // built-in POST /register (awesome-node-auth >= 1.10): email, password hash, firstName, lastName
 }));
 
 export default router;
