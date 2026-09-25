@@ -77,20 +77,20 @@
         }
       }
     },
-    "ng-awesome-node-auth": {
+    "awesome-angular-auth": {
       "projectType": "library",
-      "root": "projects/ng-awesome-node-auth",
-      "sourceRoot": "projects/ng-awesome-node-auth/src",
+      "root": "projects/awesome-angular-auth",
+      "sourceRoot": "projects/awesome-angular-auth/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "projects/ng-awesome-node-auth/tsconfig.lib.prod.json"
+              "tsConfig": "projects/awesome-angular-auth/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ng-awesome-node-auth/tsconfig.lib.json"
+              "tsConfig": "projects/awesome-angular-auth/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -98,7 +98,7 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/ng-awesome-node-auth/tsconfig.spec.json"
+            "tsConfig": "projects/awesome-angular-auth/tsconfig.spec.json"
           }
         }
       }

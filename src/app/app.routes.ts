@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { authGuard } from 'ng-awesome-node-auth';
+import { authGuard } from '@awesome-lang-auth/angular';
 import { HomeComponent } from './home.component';
 
 export const routes: Routes = [

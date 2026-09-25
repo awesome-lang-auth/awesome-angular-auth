@@ -1,12 +1,12 @@
 /**
- * ng-awesome-node-auth
+ * `@awesome-lang-auth/angular` (formerly `ng-awesome-node-auth`)
  *
  * Angular interceptor, guards and session service for awesome-node-auth backends.
  *
  * @example
  * ```ts
  * // app.config.ts
- * import { provideAuth } from 'ng-awesome-node-auth';
+ * import { provideAuth } from '@awesome-lang-auth/angular';
  *
  * export const appConfig: ApplicationConfig = {
  *   providers: [
@@ -16,7 +16,7 @@
  * };
  *
  * // app.routes.ts
- * import { authGuard, guestGuard } from 'ng-awesome-node-auth';
+ * import { authGuard, guestGuard } from '@awesome-lang-auth/angular';
  *
  * export const routes: Routes = [
  *   { path: 'login', canActivate: [guestGuard], component: LoginComponent },

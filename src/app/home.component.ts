@@ -1,14 +1,14 @@
 import { Component, inject, OnInit, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import { AuthService } from 'ng-awesome-node-auth';
+import { AuthService } from '@awesome-lang-auth/angular';
 import { Subscription } from 'rxjs';
 
-const NG_LIB_VERSION = '1.8.4';
+const NG_LIB_VERSION = '1.10.0';
 const NODE_LIB_VERSION = '1.8.4';
 
 /**
- * Root wrapper page for the ng-awesome-node-auth demo.
+ * Root wrapper page for the `@awesome-lang-auth/angular` demo.
  * Shows version badges, wiki/GitHub links, user profile and an embedded admin panel.
  */
 @Component({
@@ -24,9 +24,9 @@ const NODE_LIB_VERSION = '1.8.4';
       </div>
 
       <div class="header-badges">
-        <a href="https://www.npmjs.com/package/ng-awesome-node-auth"
+        <a href="https://www.npmjs.com/package/@awesome-lang-auth/angular"
            target="_blank" rel="noopener" class="badge badge-angular">
-          ng-awesome-node-auth&nbsp;<strong>v{{ ngVersion }}</strong>
+          &#64;awesome-lang-auth/angular&nbsp;<strong>v{{ ngVersion }}</strong>
         </a>
         <a href="https://www.npmjs.com/package/awesome-node-auth"
            target="_blank" rel="noopener" class="badge badge-node">
@@ -38,10 +38,10 @@ const NODE_LIB_VERSION = '1.8.4';
         <a href="https://awesomenodeauth.com" target="_blank" rel="noopener" class="nav-link">
           📖 Wiki
         </a>
-        <a href="https://github.com/nik2208/awesome-node-auth" target="_blank" rel="noopener" class="nav-link">
+        <a href="https://github.com/awesome-lang-auth/awesome-node-auth" target="_blank" rel="noopener" class="nav-link">
           ⭐ Node Library
         </a>
-        <a href="https://github.com/nik2208/ng-awesome-node-auth" target="_blank" rel="noopener" class="nav-link">
+        <a href="https://github.com/awesome-lang-auth/awesome-angular-auth" target="_blank" rel="noopener" class="nav-link">
           ⭐ Angular Library
         </a>
       </nav>
@@ -159,7 +159,7 @@ const NODE_LIB_VERSION = '1.8.4';
         <section class="login-section">
           <div class="login-intro">
             <h2>Demo Dashboard</h2>
-            <p>Sign in to explore the full ng-awesome-node-auth experience — profile management, TOTP 2FA, sessions and more.</p>
+            <p>Sign in to explore the full &#64;awesome-lang-auth/angular experience — profile management, TOTP 2FA, sessions and more.</p>
           </div>
           <div class="iframe-wrapper login-frame-wrapper">
             <iframe
@@ -180,7 +180,7 @@ const NODE_LIB_VERSION = '1.8.4';
       <span>MIT License · © 2024 nik2208 ·</span>
       <a href="https://awesomenodeauth.com" target="_blank" rel="noopener">awesomenodeauth.com</a>
       <span>·</span>
-      <a href="https://github.com/nik2208/awesome-node-auth" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/awesome-lang-auth/awesome-node-auth" target="_blank" rel="noopener">GitHub</a>
     </footer>
   `,
   styles: [`

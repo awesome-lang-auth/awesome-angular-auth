@@ -1,11 +1,11 @@
 {
   "name": "ng-awesome-node-auth-prj",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:lib": "ng build ng-awesome-node-auth",
+    "build:lib": "ng build awesome-angular-auth",
     "build:ssr": "npm run build:lib && ng build",
     "serve:ssr": "node dist/ng-awesome-node-auth-prj/server/server.mjs",
     "watch": "ng build --watch --configuration development",
@@ -23,12 +23,12 @@
       }
     ]
   },
-  "description": "Official monorepo for ng-awesome-node-auth library and it's Angular SSR demo dashboard",
+  "description": "Official monorepo for the @awesome-lang-auth/angular library (formerly ng-awesome-node-auth) and its Angular SSR demo dashboard",
   "private": true,
   "packageManager": "npm@11.6.4",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nik2208/ng-awesome-node-auth.git"
+    "url": "git+https://github.com/awesome-lang-auth/awesome-angular-auth.git"
   },
   "keywords": [
     "auth",
@@ -42,7 +42,7 @@
   "author": "Nicola Brecciaroli",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nik2208/ng-awesome-node-auth/issues"
+    "url": "https://github.com/awesome-lang-auth/awesome-angular-auth/issues"
   },
   "homepage": "https://www.awesomenodeauth.com/",
   "dependencies": {

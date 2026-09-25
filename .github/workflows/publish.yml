@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - 'projects/ng-awesome-node-auth/package.json'
+      - 'projects/awesome-angular-auth/package.json'
       - '.github/workflows/publish.yml'
   workflow_dispatch:
 
@@ -33,5 +33,5 @@ jobs:
         run: npm run build:lib
 
       - name: Publish to npm
-        working-directory: ${{ github.workspace }}/dist/ng-awesome-node-auth
+        working-directory: ${{ github.workspace }}/dist/awesome-angular-auth
         run: npm publish --access public --provenance
