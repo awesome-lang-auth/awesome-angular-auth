@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { provideHttpClient } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
+import { ObservedValueOf } from 'rxjs';
 import { NG_AUTH_OPTIONS } from './auth.config';
 import { AuthService } from './auth.service';
 
@@ -26,7 +27,8 @@ describe('AuthService', () => {
     });
 
     describe('setup2fa()', () => {
-        type Setup2faResult = { success: boolean; secret?: string; otpauthUrl?: string; qrCode?: string; error?: string };
+        // Derived from the public signature, so a change to the result type reaches this spec.
+        type Setup2faResult = ObservedValueOf<ReturnType<AuthService['setup2fa']>>;
 
         const otpauthUrl = 'otpauth://totp/Demo:user%40example.com?secret=JBSWY3DPEHPK3PXP&issuer=Demo';
 
@@ -46,6 +48,8 @@ describe('AuthService', () => {
             expectSetupRequest().flush({ secret: 'JBSWY3DPEHPK3PXP', otpauthUrl });
 
             expect(result).toEqual({ success: true, secret: 'JBSWY3DPEHPK3PXP', otpauthUrl, qrCode: undefined });
+            // Typed access: the spec stops compiling if otpauthUrl leaves the result type.
+            expect(result?.otpauthUrl).toBe(otpauthUrl);
         });
 
         it('passes secret, otpauthUrl and qrCode through when the server sends all three', () => {
