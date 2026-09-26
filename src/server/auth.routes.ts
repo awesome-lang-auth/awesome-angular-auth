@@ -64,7 +64,9 @@ router.use(
     googleStrategy,
     uploadDir,
     // Router events (login, logout, registration, 2FA, password and email changes, ...)
-    // are published on the demo's event bus.
+    // are published on the demo's event bus. Nothing subscribes to them yet: attach a
+    // listener with bus.onEvent('*', ...) to act on them. Do not call authTools.track()
+    // from a '*' listener: track() publishes on this same bus and would loop.
     eventBus: bus,
     // Built-in POST /register (awesome-node-auth >= 1.10): it requires email and password,
     // answers 409 for a taken email, hashes the password and stores only email, the hash,
