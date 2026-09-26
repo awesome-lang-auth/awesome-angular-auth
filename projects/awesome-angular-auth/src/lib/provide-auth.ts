@@ -14,7 +14,7 @@ import { AuthService } from './auth.service';
 import { authInterceptor } from './auth.interceptor';
 
 /**
- * Configures ng-awesome-node-auth for the Angular application.
+ * Configures `@awesome-lang-auth/angular` for the Angular application.
  *
  * Registers:
  * - `NG_AUTH_OPTIONS` injection token

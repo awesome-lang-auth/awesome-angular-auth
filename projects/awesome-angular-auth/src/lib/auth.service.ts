@@ -259,9 +259,14 @@ export class AuthService {
 
     // ── 2FA ─────────────────────────────────────────────────────────────────
 
-    setup2fa(): Observable<{ success: boolean; secret?: string; qrCode?: string; error?: string }> {
-        return this.http.post<{ secret: string; qrCode: string }>(`${this.opts.apiPrefix}/2fa/setup`, {}, { withCredentials: true }).pipe(
-            map(res => ({ success: true, secret: res.secret, qrCode: res.qrCode })),
+    /**
+     * Start TOTP enrolment. The server answers with the `secret`, the `otpauthUrl`
+     * provisioning URI and, when it can render one, a `qrCode` data URL. Some backends
+     * send `otpauthUrl` without `qrCode`: draw the QR from `otpauthUrl` in that case.
+     */
+    setup2fa(): Observable<{ success: boolean; secret?: string; otpauthUrl?: string; qrCode?: string; error?: string }> {
+        return this.http.post<{ secret: string; otpauthUrl?: string; qrCode?: string }>(`${this.opts.apiPrefix}/2fa/setup`, {}, { withCredentials: true }).pipe(
+            map(res => ({ success: true, secret: res.secret, otpauthUrl: res.otpauthUrl, qrCode: res.qrCode })),
             catchError(err => of({ success: false, error: err.error?.error || 'Failed to initialize 2FA' }))
         );
     }

@@ -1,20 +1,21 @@
 {
-  "name": "ng-awesome-node-auth",
-  "version": "1.9.0",
-  "description": "Angular client library for the awesome-node-auth ecosystem",
+  "name": "@awesome-lang-auth/angular",
+  "version": "1.10.0",
+  "description": "Angular client library for the awesome-lang-auth ecosystem (formerly ng-awesome-node-auth)",
   "author": "Nicola Brecciaroli",
   "license": "MIT",
   "homepage": "https://www.awesomenodeauth.com/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nik2208/ng-awesome-node-auth.git"
+    "url": "git+https://github.com/awesome-lang-auth/awesome-angular-auth.git"
   },
   "bugs": {
-    "url": "https://github.com/nik2208/ng-awesome-node-auth/issues"
+    "url": "https://github.com/awesome-lang-auth/awesome-angular-auth/issues"
   },
   "keywords": [
     "auth",
     "angular",
+    "awesome-lang-auth",
     "awesome-node-auth",
     "authentication",
     "jwt",
@@ -27,6 +28,9 @@
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "sideEffects": false
 }
