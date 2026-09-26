@@ -1,0 +1,47 @@
+{
+  "name": "ng-awesome-node-auth",
+  "version": "1.10.0",
+  "description": "Renamed to @awesome-lang-auth/angular. This last version only re-exports @awesome-lang-auth/angular: install that package instead.",
+  "author": "Nicola Brecciaroli",
+  "license": "MIT",
+  "homepage": "https://www.awesomenodeauth.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awesome-lang-auth/awesome-angular-auth.git",
+    "directory": "legacy/ng-awesome-node-auth"
+  },
+  "bugs": {
+    "url": "https://github.com/awesome-lang-auth/awesome-angular-auth/issues"
+  },
+  "keywords": [
+    "auth",
+    "angular",
+    "awesome-lang-auth",
+    "awesome-node-auth",
+    "deprecated"
+  ],
+  "type": "module",
+  "module": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "sideEffects": false,
+  "peerDependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/core": "^21.2.0"
+  },
+  "dependencies": {
+    "@awesome-lang-auth/angular": "^1.10.0"
+  }
+}

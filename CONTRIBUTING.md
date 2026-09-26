@@ -14,6 +14,8 @@ npm start           # Run in development mode
 
 The library lives in `projects/awesome-angular-auth` and builds to `dist/awesome-angular-auth` (`npm run build:lib`). The demo imports it as `@awesome-lang-auth/angular` through the `tsconfig.json` path alias, so build the library before the demo. Consumers install it with `npm i @awesome-lang-auth/angular`.
 
+`legacy/ng-awesome-node-auth` is the last release of the old package name: a re-export of `@awesome-lang-auth/angular`, with no code of its own. It is not part of the workspace build, and `publish.yml` never publishes it: it is packed and published by hand.
+
 ## How to contribute
 
 1. **Fork** the repository and create a branch from `develop`.
