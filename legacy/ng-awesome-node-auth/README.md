@@ -27,7 +27,7 @@ The API is unchanged. New features and fixes ship only in `@awesome-lang-auth/an
 
 - `import { ... } from 'ng-awesome-node-auth'` resolves to `@awesome-lang-auth/angular` (`^1.10.0`). The exports are the same objects: the same `AuthService` class, the same `NG_AUTH_OPTIONS` and `AUTH_SERVICE` tokens. An app can mix both import specifiers while it migrates file by file.
 - The Angular peer dependencies are unchanged from 1.9.0: `@angular/common` and `@angular/core` `^21.2.0`.
-- It ships only the re-export (`index.js`, `index.d.ts`), this README and the MIT license.
+- It ships only the re-export (`index.mjs`, `index.d.ts`), this README and the MIT license.
 
 ## Links
 
