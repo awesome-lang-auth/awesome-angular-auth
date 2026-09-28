@@ -8,8 +8,8 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "paths": {
-      "ng-awesome-node-auth": [
-        "./dist/ng-awesome-node-auth"
+      "@awesome-lang-auth/angular": [
+        "./dist/awesome-angular-auth"
       ]
     },
     "noFallthroughCasesInSwitch": true,
@@ -35,10 +35,10 @@
       "path": "./tsconfig.spec.json"
     },
     {
-      "path": "./projects/ng-awesome-node-auth/tsconfig.lib.json"
+      "path": "./projects/awesome-angular-auth/tsconfig.lib.json"
     },
     {
-      "path": "./projects/ng-awesome-node-auth/tsconfig.spec.json"
+      "path": "./projects/awesome-angular-auth/tsconfig.spec.json"
     }
   ]
 }

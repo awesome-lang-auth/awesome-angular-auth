@@ -2,7 +2,7 @@ import { InjectionToken } from '@angular/core';
 import { AuthService } from './auth.service';
 
 /**
- * Configuration options for ng-awesome-node-auth.
+ * Configuration options for `@awesome-lang-auth/angular`.
  */
 export interface NgAuthOptions {
     /**

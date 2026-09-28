@@ -1,9 +1,18 @@
 # NG Awesome Node Auth Project
 
-This project combines a powerful Node.js authentication backend using `awesome-node-auth` with a modern Angular frontend utilizing the `ng-awesome-node-auth` library.
+This project combines a powerful Node.js authentication backend using `awesome-node-auth` with a modern Angular frontend utilizing the `@awesome-lang-auth/angular` library (formerly `ng-awesome-node-auth`).
+
+## Installing the library
+
+```bash
+npm i @awesome-lang-auth/angular
+```
+
+> **Formerly `ng-awesome-node-auth`:** replace the dependency and the import specifier (`'ng-awesome-node-auth'` → `'@awesome-lang-auth/angular'`). The API is unchanged. Repository: [awesome-lang-auth/awesome-angular-auth](https://github.com/awesome-lang-auth/awesome-angular-auth).
 
 ## Project Structure
 
+- **Angular library**: Located in `projects/awesome-angular-auth` (published as `@awesome-lang-auth/angular`, see its [README](projects/awesome-angular-auth/README.md)).
 - **Angular Application**: Located in `src/app`.
 - **Express Server**: Located in `src/server.ts` (handles SSR and API routing).
 - **In-Memory Stores**: Located in `src/server/` (User and Settings stores).
@@ -44,17 +53,17 @@ Mount the authentication router and the Admin Panel.
 
 ```typescript
 import { Router } from 'express';
+import { AuthEventBus } from 'awesome-node-auth';
 import { authConfigurator, settingsStore, uploadDir } from './auth.config';
 
 const router = Router();
+const bus = new AuthEventBus();
 
 router.use('/', authConfigurator.router({
   settingsStore,
   uploadDir,
-  onRegister: async (data) => {
-    // Custom registration logic (e.g., password hashing)
-    return userStore.create(data);
-  }
+  eventBus: bus,          // router events (login, register, 2FA, ...) are published on it
+  defaultRegister: true,  // built-in POST /register (awesome-node-auth >= 1.10): email, password hash, firstName, lastName
 }));
 
 export default router;
@@ -154,12 +163,12 @@ app.use('/admin/auth', createAdminRouter(userStore, {
 
 ## 🎨 Frontend Implementation
 
-The Angular app uses the `ng-awesome-node-auth` library for seamless integration.
+The Angular app uses the `@awesome-lang-auth/angular` library for seamless integration.
 
 ### 1. App Configuration (`src/app/app.config.ts`)
 
 ```typescript
-import { provideAuth, provideAuthUi } from 'ng-awesome-node-auth';
+import { provideAuth, provideAuthUi } from '@awesome-lang-auth/angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -177,7 +186,7 @@ export const appConfig: ApplicationConfig = {
 ### 2. Route Protection (`src/app/app.routes.ts`)
 
 ```typescript
-import { authGuard, guestGuard } from 'ng-awesome-node-auth';
+import { authGuard, guestGuard } from '@awesome-lang-auth/angular';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [guestGuard] },

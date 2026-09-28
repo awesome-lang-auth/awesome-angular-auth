@@ -10,7 +10,7 @@
 
 **Please do not open a public GitHub issue for security vulnerabilities.**
 
-To report a security issue, open a [GitHub Security Advisory](https://github.com/nik2208/ng-awesome-node-auth-prj/security/advisories/new) (private disclosure).
+To report a security issue, open a [GitHub Security Advisory](https://github.com/awesome-lang-auth/awesome-angular-auth/security/advisories/new) (private disclosure).
 
 Please include:
 
@@ -27,11 +27,11 @@ Please include:
 
 ## Scope
 
-This policy covers the code in this repository. 
-For security issues related to the core logic, please check the [awesome-node-auth Security Policy](https://github.com/nik2208/awesome-node-auth/blob/main/SECURITY.md).
+This policy covers the code in this repository, including the `@awesome-lang-auth/angular` npm package (formerly `ng-awesome-node-auth`: replace the dependency and the import specifier to migrate).
+For security issues related to the core logic, please check the [awesome-node-auth Security Policy](https://github.com/awesome-lang-auth/awesome-node-auth/blob/main/SECURITY.md).
 
 ## Security best practices
 
 - Never commit secrets (like `JWT_SECRET` or `ADMIN_SECRET`) to source control.
 - Use the `.env.example` file as a template for your local environment.
-- Always keep the `awesome-node-auth` dependency updated.
+- Always keep the `@awesome-lang-auth/angular` (`npm i @awesome-lang-auth/angular@latest`) and `awesome-node-auth` dependencies updated.
