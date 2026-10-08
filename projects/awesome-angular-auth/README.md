@@ -9,7 +9,7 @@ This library is designed to be **lightweight and 100% tree-shakable**. You only 
 ## 🔗 Official Documentation
 
 For detailed instructions on how to set up the **Node.js backend**, visit the official documentation:
-👉 **[www.awesomenodeauth.com](https://www.awesomenodeauth.com)**
+👉 **[awesomelangauth.com](https://awesomelangauth.com)**
 
 ---
 
@@ -95,4 +95,4 @@ canRegister = this.uiConfig.hasFeature('register');
 - **`checkSession()`**: Re-fetches the current session (`/me`).
 - **`refreshToken()`**: Manually triggers a token refresh.
 
-For full API reference and backend integration guides, visit [www.awesomenodeauth.com](https://www.awesomenodeauth.com).
+For full API reference and backend integration guides, visit [awesomelangauth.com](https://awesomelangauth.com).
