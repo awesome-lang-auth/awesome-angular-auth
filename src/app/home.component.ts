@@ -35,7 +35,7 @@ const NODE_LIB_VERSION = '1.10.0';
       </div>
 
       <nav class="header-links">
-        <a href="https://awesomenodeauth.com" target="_blank" rel="noopener" class="nav-link">
+        <a href="https://awesomelangauth.com" target="_blank" rel="noopener" class="nav-link">
           📖 Wiki
         </a>
         <a href="https://github.com/awesome-lang-auth/awesome-node-auth" target="_blank" rel="noopener" class="nav-link">
@@ -178,7 +178,7 @@ const NODE_LIB_VERSION = '1.10.0';
     <!-- ═══════════ FOOTER ═══════════ -->
     <footer class="site-footer">
       <span>MIT License · © 2024 nik2208 ·</span>
-      <a href="https://awesomenodeauth.com" target="_blank" rel="noopener">awesomenodeauth.com</a>
+      <a href="https://awesomelangauth.com" target="_blank" rel="noopener">awesomelangauth.com</a>
       <span>·</span>
       <a href="https://github.com/awesome-lang-auth/awesome-node-auth" target="_blank" rel="noopener">GitHub</a>
     </footer>
