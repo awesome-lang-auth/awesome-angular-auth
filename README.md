@@ -8,7 +8,7 @@ This project combines a powerful Node.js authentication backend using `awesome-n
 npm i @awesome-lang-auth/angular
 ```
 
-The library supports **Angular 21.2+ and Angular 22** (peer dependencies `^21.2.0 || ^22.0.0` since 1.11.0). This repository's workspace and demo app use Angular 22, which needs Node.js `^22.22.3` or `^24.15.0`.
+The library supports **Angular 21.2+ and Angular 22** (peer dependencies `^21.2.0 || ^22.0.0` since 1.11.0). This repository's workspace and demo app use Angular 22, which needs Node.js `^22.22.3`, `^24.15.0` or `>=26.0.0`.
 
 > **Formerly `ng-awesome-node-auth`:** replace the dependency and the import specifier (`'ng-awesome-node-auth'` → `'@awesome-lang-auth/angular'`). The API is unchanged. Repository: [awesome-lang-auth/awesome-angular-auth](https://github.com/awesome-lang-auth/awesome-angular-auth).
 
