@@ -8,6 +8,8 @@ This project combines a powerful Node.js authentication backend using `awesome-n
 npm i @awesome-lang-auth/angular
 ```
 
+The library supports **Angular 21.2+ and Angular 22** (peer dependencies `^21.2.0 || ^22.0.0` since 1.11.0). This repository's workspace and demo app use Angular 22, which needs Node.js `^22.22.3`, `^24.15.0` or `>=26.0.0`.
+
 > **Formerly `ng-awesome-node-auth`:** replace the dependency and the import specifier (`'ng-awesome-node-auth'` → `'@awesome-lang-auth/angular'`). The API is unchanged. Repository: [awesome-lang-auth/awesome-angular-auth](https://github.com/awesome-lang-auth/awesome-angular-auth).
 
 ## Project Structure
@@ -134,13 +136,17 @@ if (isMainModule(import.meta.url)) {
 ```
 This ensures the server only starts during actual execution, not during the build.
 
-### 3. Wildcard SSR Route
-In `src/app/app.routes.server.ts`, ensure you have a wildcard route configured for server rendering to handle the fallback correctly:
+### 3. Wildcard Server Route
+In `src/app/app.routes.server.ts`, the demo renders every route on the client:
   ```typescript
   export const serverRoutes: ServerRoute[] = [
-    { path: '**', renderMode: RenderMode.Server }
+    { path: '**', renderMode: RenderMode.Client }
   ];
   ```
+The demo's pages are behind `authGuard`, and a server render has no session: the server's call to `/api/auth/me` does not carry the browser's cookies. The guard would then send the visitor to the external login page, which it cannot do on the server, so the render would be cancelled and Express would answer 404. Use `RenderMode.Server` for public routes, or for guarded routes when `loginUrl` is a route of the app (such as `/login`).
+
+### 4. Allowed Hosts (Angular 22)
+Angular 22 answers 400 to a request whose `Host` it does not allow; Angular 21 fell back to client rendering. `src/server.ts` passes `allowedHosts: ['localhost']` to `AngularNodeAppEngine`. For a deployment, add the public host to `security.allowedHosts` in `angular.json`, which is merged with that list. `NG_ALLOWED_HOSTS` is ignored while the option is set.
 
 ---
 

@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { HttpClient, provideHttpClient, withInterceptors } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptors, withXhr } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { authInterceptor } from './auth.interceptor';
 import { NG_AUTH_OPTIONS } from './auth.config';
@@ -12,7 +12,7 @@ describe('authInterceptor', () => {
     const setup = (apiPrefix: string) => {
         TestBed.configureTestingModule({
             providers: [
-                provideHttpClient(withInterceptors([authInterceptor])),
+                provideHttpClient(withXhr(), withInterceptors([authInterceptor])),
                 provideHttpClientTesting(),
                 { provide: NG_AUTH_OPTIONS, useValue: { apiPrefix } },
                 { provide: AuthService, useValue: { logout: () => {}, refreshToken: () => {} } }
@@ -82,7 +82,7 @@ describe('authInterceptor', () => {
             logoutCalled = false;
             TestBed.configureTestingModule({
                 providers: [
-                    provideHttpClient(withInterceptors([authInterceptor])),
+                    provideHttpClient(withXhr(), withInterceptors([authInterceptor])),
                     provideHttpClientTesting(),
                     { provide: NG_AUTH_OPTIONS, useValue: { apiPrefix: '/api/auth' } },
                     {

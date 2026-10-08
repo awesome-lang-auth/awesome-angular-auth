@@ -3,6 +3,17 @@
 All notable changes to the Angular client library are documented in this file.
 Releases up to 1.9.0 were published as `ng-awesome-node-auth` and have no entries here.
 
+## [1.11.0] — 2026-10-08
+
+### Added
+- **Angular 22 support.** The peer dependencies `@angular/core` and `@angular/common` are now `^21.2.0 || ^22.0.0`, so the package installs in an Angular 22 app without `--legacy-peer-deps`. Angular 21.2 apps keep working: the package built with Angular 22 was checked in new Angular 21.2 and 22.2 apps (production build, unit tests, server-side rendering).
+
+### Changed
+- The package is built with Angular 22, ng-packagr 22 and TypeScript 6.0. The public API and the requests sent to the backend are unchanged. The JavaScript bundle comes out of the new toolchain with a different layout and without the source comments; the typings keep their documentation.
+- `provideAuth()` still adds `withFetch()` to `provideHttpClient()`. Angular 22 marks `withFetch()` deprecated because fetch is now its default backend, but Angular 21 still defaults to XHR, so the library keeps it.
+- The workspace and the demo app use Angular 22. Building this repository needs Node.js `^22.22.3`, `^24.15.0` or `>=26.0.0`.
+- The demo's Express server now allows `localhost` as a host, because Angular 22 answers 400 to a host it does not allow where Angular 21 fell back to client rendering. It keeps trusting the `X-Forwarded-Host` and `X-Forwarded-Proto` headers, as Angular 21 did by default. Its pages are rendered on the client (`RenderMode.Client`), as they already were in practice on Angular 21.
+
 ## [1.10.1] — 2026-10-08
 
 ### Changed
