@@ -3,6 +3,11 @@
 All notable changes to the Angular client library are documented in this file.
 Releases up to 1.9.0 were published as `ng-awesome-node-auth` and have no entries here.
 
+## [1.10.1] — 2026-10-08
+
+### Changed
+- The homepage and documentation links point to [awesomelangauth.com](https://awesomelangauth.com). No code change.
+
 ## [1.10.0] — 2026-09-26
 
 ### Changed
