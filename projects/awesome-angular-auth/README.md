@@ -32,6 +32,15 @@ Install the library in your Angular project:
 npm install @awesome-lang-auth/angular
 ```
 
+### Compatibility
+
+| `@awesome-lang-auth/angular` | Angular |
+|---|---|
+| 1.11.x | 21.2+ and 22 |
+| 1.10.x | 21.2+ |
+
+Since 1.11.0, the peer dependencies on `@angular/core` and `@angular/common` are `^21.2.0 || ^22.0.0`. Version 1.10.x declares `^21.2.0`.
+
 ---
 
 ## 🛠️ Quick Start
