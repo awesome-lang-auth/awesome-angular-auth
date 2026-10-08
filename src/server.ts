@@ -118,7 +118,14 @@ app.use(
  */
 app.use((req, res, next) => {
   if (!angularApp) {
-    angularApp = new AngularNodeAppEngine();
+    angularApp = new AngularNodeAppEngine({
+      // Angular 22 answers 400 to a Host it does not allow (Angular 21 fell back to client rendering).
+      // For a deployment, add the public host to `security.allowedHosts` in angular.json, which is
+      // merged with this list. NG_ALLOWED_HOSTS is ignored while this option is set.
+      allowedHosts: ['localhost'],
+      // TODO: This is a security-sensitive option. Remove if not needed. For more information, see https://angular.dev/best-practices/security#configuring-trusted-proxy-headers
+      trustProxyHeaders: ['x-forwarded-host', 'x-forwarded-proto'],
+    });
   }
   angularApp
     .handle(req)
