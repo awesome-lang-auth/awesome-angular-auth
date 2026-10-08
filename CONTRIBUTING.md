@@ -4,6 +4,8 @@ Thank you for your interest in contributing to `@awesome-lang-auth/angular` (for
 
 ## Development setup
 
+The workspace uses Angular 22, which needs Node.js `^22.22.3` or `^24.15.0`.
+
 ```bash
 git clone https://github.com/awesome-lang-auth/awesome-angular-auth
 cd awesome-angular-auth
