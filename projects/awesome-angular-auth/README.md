@@ -1,8 +1,10 @@
-# ng-awesome-node-auth
+# @awesome-lang-auth/angular
 
 An elegant, standalone Angular library providing interceptors, guards, and session management for frontends backed by `awesome-node-auth`.
 
 This library is designed to be **lightweight and 100% tree-shakable**. You only ship the code you actually use.
+
+> **Formerly `ng-awesome-node-auth`.** To migrate, replace the dependency (`npm uninstall ng-awesome-node-auth`, then `npm i @awesome-lang-auth/angular`) and the import specifier (`'ng-awesome-node-auth'` → `'@awesome-lang-auth/angular'`). The API is unchanged.
 
 ## 🔗 Official Documentation
 
@@ -27,7 +29,7 @@ For detailed instructions on how to set up the **Node.js backend**, visit the of
 Install the library in your Angular project:
 
 ```bash
-npm install ng-awesome-node-auth
+npm install @awesome-lang-auth/angular
 ```
 
 ---
@@ -40,7 +42,7 @@ Add `provideAuth` to your application configuration.
 
 ```typescript
 import { ApplicationConfig } from '@angular/core';
-import { provideAuth, provideAuthUi } from 'ng-awesome-node-auth';
+import { provideAuth, provideAuthUi } from '@awesome-lang-auth/angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -56,7 +58,7 @@ export const appConfig: ApplicationConfig = {
 ### 2. Protect Routes (`app.routes.ts`)
 
 ```typescript
-import { authGuard, guestGuard } from 'ng-awesome-node-auth';
+import { authGuard, guestGuard } from '@awesome-lang-auth/angular';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [guestGuard] },
@@ -76,7 +78,7 @@ When using `provideAuthUi()`, the library automatically:
 
 ```typescript
 import { inject } from '@angular/core';
-import { UiConfigService } from 'ng-awesome-node-auth';
+import { UiConfigService } from '@awesome-lang-auth/angular';
 
 // In your component...
 uiConfig = inject(UiConfigService);

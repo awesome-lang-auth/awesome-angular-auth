@@ -9,7 +9,7 @@ import { UiConfigService } from './ui-config.service';
 import { ThemeService } from './theme.service';
 
 /**
- * Configures the optional UI Integration for ng-awesome-node-auth.
+ * Configures the optional UI Integration for `@awesome-lang-auth/angular`.
  * 
  * Provides:
  * - `UiConfigService` which fetches settings from `/api/auth/ui/config` on startup.

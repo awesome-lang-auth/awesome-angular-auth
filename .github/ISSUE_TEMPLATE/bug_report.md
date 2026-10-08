@@ -29,6 +29,7 @@ What actually happens. Include error messages and stack traces from the browser 
 | Field | Value |
 |-------|-------|
 | Project version | |
+| `@awesome-lang-auth/angular` version (formerly `ng-awesome-node-auth`) | |
 | `@angular/ssr` version | |
 | `awesome-node-auth` version | |
 | Browser | |
