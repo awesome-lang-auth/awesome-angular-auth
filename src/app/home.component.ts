@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '@awesome-lang-auth/angular';
 import { Subscription } from 'rxjs';
 
-const NG_LIB_VERSION = '1.10.1';
+const NG_LIB_VERSION = '1.11.0';
 const NODE_LIB_VERSION = '1.10.0';
 
 /**
