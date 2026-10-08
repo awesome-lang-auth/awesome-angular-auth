@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, OnDestroy, PLATFORM_ID } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '@awesome-lang-auth/angular';
@@ -183,6 +183,7 @@ const NODE_LIB_VERSION = '1.10.0';
       <a href="https://github.com/awesome-lang-auth/awesome-node-auth" target="_blank" rel="noopener">GitHub</a>
     </footer>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   styles: [`
     /* ── Reset / Base ───────────────────────────────────────── */
     :host {
