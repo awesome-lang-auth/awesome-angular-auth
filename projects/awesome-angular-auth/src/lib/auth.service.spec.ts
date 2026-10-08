@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withXhr } from '@angular/common/http';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { ObservedValueOf } from 'rxjs';
 import { NG_AUTH_OPTIONS } from './auth.config';
@@ -12,7 +12,7 @@ describe('AuthService', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             providers: [
-                provideHttpClient(),
+                provideHttpClient(withXhr()),
                 provideHttpClientTesting(),
                 { provide: NG_AUTH_OPTIONS, useValue: { apiPrefix: '/api/auth' } },
                 AuthService,
