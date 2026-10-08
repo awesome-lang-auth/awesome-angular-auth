@@ -4,7 +4,7 @@
   "description": "Angular client library for the awesome-lang-auth ecosystem (formerly ng-awesome-node-auth)",
   "author": "Nicola Brecciaroli",
   "license": "MIT",
-  "homepage": "https://awesomelangauth.com/docs/frameworks/angular/",
+  "homepage": "https://awesomelangauth.com/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/awesome-lang-auth/awesome-angular-auth.git"

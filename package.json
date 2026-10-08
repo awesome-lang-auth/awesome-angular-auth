@@ -44,7 +44,7 @@
   "bugs": {
     "url": "https://github.com/awesome-lang-auth/awesome-angular-auth/issues"
   },
-  "homepage": "https://awesomelangauth.com/docs/frameworks/angular/",
+  "homepage": "https://awesomelangauth.com/",
   "dependencies": {
     "@angular/common": "^21.2.4",
     "@angular/compiler": "^21.2.4",
